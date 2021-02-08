@@ -9,7 +9,7 @@
 #
 ##############################################################################
 
-function _msg() {
+_msg() {
 	term_cols=$(tput cols) 
 	str=":: $1 ::"
 	for ((i=1; i<=`tput cols`; i++)); do echo -n ‾; done
