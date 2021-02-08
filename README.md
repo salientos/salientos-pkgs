@@ -1,3 +1,3 @@
-salientos/dotfiles# salient os package sources
+salient os package sources
 
 Salient OS Package Sources
