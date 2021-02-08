@@ -25,7 +25,7 @@ rm -rf .git
 sh ./git_setup*
 mv config .git/config
 git add --all .
-git commit -m "New Release(s) Cleanup"
+git commit -m "Initialise Repo"
 git push origin master --force
 
 _msg "Clean up completed..."
