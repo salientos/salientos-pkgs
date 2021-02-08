@@ -1,0 +1,19 @@
+#Maintainer: silent robot (d3signr@gmail.com)
+pkgname=salientos-wallpapers
+_pkgname=salientos-wallpapers
+_destname1="/usr/share/backgrounds/salientos/"
+pkgver=21.02
+pkgrel=1
+pkgdesc="Wallpapers for Salient OS"
+arch=('any')
+url="https://github.com/salientos/salientos-wallpapers"
+license=('GPL3')
+makedepends=('git')
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+source=(${_pkgname}::"git+https://github.com/salientos/${_pkgname}.git")
+sha256sums=('SKIP')
+package() {
+	install -dm755 ${pkgdir}${_destname1}
+	cp -r  ${srcdir}/${_pkgname}${_destname1}* ${pkgdir}${_destname1}
+}
