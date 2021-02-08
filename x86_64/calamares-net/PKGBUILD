@@ -16,7 +16,7 @@ backup=('usr/share/calamares/modules/bootloader.conf'
         'usr/share/calamares/modules/unpackfs.conf')
 
 source=("calamares-$pkgver-$pkgrel.tar.gz::$url/v$pkgver/calamares-$pkgver.tar.gz")
-sha256sums=('b36c27c1c76b7092c6e4d86e812927b410987cfbafdd3ffdf8f7256e62b4049e')
+sha256sums=('a6003499182520139b34d510228ccdcba12f2504a61d117e90de048ea2f8b6de')
 
 prepare() {
     cp -r /home/silent/customrepo/calamares-net/salientos ${srcdir}
