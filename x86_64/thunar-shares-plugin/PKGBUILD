@@ -11,7 +11,7 @@ depends=('thunar>=1.7.0' 'samba')
 makedepends=('xfce4-dev-tools')
 install="${pkgname}.install"
 source=("https://git.xfce.org/thunar-plugins/thunar-shares-plugin/snapshot/thunar-shares-plugin-master.tar.gz")
-sha1sums=('9fd44c47b6b8a6f47a9ab16d47fd1438c0334a98')
+sha1sums=('SKIP')
  
 prepare() {
   cd "${srcdir}/${pkgname}-master"

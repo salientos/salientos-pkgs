@@ -3,7 +3,7 @@
 
 _gitname=i3lock-color
 pkgname="$_gitname-git"
-pkgver=r774.a318ff3
+pkgver=r819.085df46
 pkgrel=1
 pkgdesc="An improved screenlocker based upon XCB and PAM with color configuration support"
 arch=('i686' 'x86_64')

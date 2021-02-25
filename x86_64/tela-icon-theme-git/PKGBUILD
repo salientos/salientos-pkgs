@@ -1,7 +1,7 @@
 # Maintainer: Mark Wagie <mark dot wagie at tutanota dot com>
 # Contributor: Robosky <fangyuhao0612@gmail.com>
 pkgname=tela-icon-theme-git
-pkgver=2021.01.21.r1.g7d731388
+pkgver=2021.01.21.r4.g6a1fd622
 pkgrel=1
 pkgdesc="A flat colorful design icon theme."
 arch=('any')

@@ -1,7 +1,7 @@
 # Maintainer: Chocobo1 <chocobo1 AT archlinux DOT net>
 
 pkgname=qt5-quickcontrols2-git
-pkgver=6.0.1.r54.ga2593ff9
+pkgver=6.1.0_alpha1.r54.ga2593ff9
 pkgrel=1
 pkgdesc="Qt5 Quick Controls 2 module"
 arch=('i686' 'x86_64')
