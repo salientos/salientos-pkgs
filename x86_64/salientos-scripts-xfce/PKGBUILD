@@ -1,0 +1,30 @@
+#Maintainer: silent robot (d3signr@gmail.com)
+
+pkgname=salientos-scripts-xfce
+pkgver=1.0
+pkgrel=0
+pkgdesc='Salient OS Install Scripts'
+url="https://github.com/salientos/"
+arch=('any')
+license=('GPL3')
+makedepends=('git')
+depends=()
+conflicts=('salientos-scripts-kde')
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+
+source=('chrooted_post_install.sh'
+		'post_install.sh')
+
+sha512sums=('dbbe3afce93c27e729c2b8713b7e5910b69f1d5e344ddfe4e6bd797c6593d1790b033e24fea185ff6b5f9c378eaa20eee27741ec5f566a3e2bab450bb7325b83'
+            '69c817a2b80eaf6d6a5ff97d403f096317d89c9999de32c917f0778136e0464239f5eedc9dd0f76e282374fb5c03740485f4067fe74a051e8a957f85011124b7')
+
+package() {
+	local bin=${pkgdir}/usr/bin
+	
+	install -Dm755 chrooted_post_install.sh 	${bin}/chrooted_post_install.sh
+	install -Dm755 post_install.sh 				${bin}/post_install.sh
+	
+	chmod +x ${bin}/chrooted_post_install.sh
+	chmod +x ${bin}/post_install.sh
+}

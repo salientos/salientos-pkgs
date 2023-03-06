@@ -1,0 +1,10 @@
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Type = Package
+Target = filesystem
+
+[Action]
+Description = Fixing Salient OS related pixmaps
+When = PostTransaction
+Exec = /usr/bin/salientos-hooks-misc fix-pixmaps

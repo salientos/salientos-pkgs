@@ -1,0 +1,21 @@
+# Maintainer: Silent Robot <d3signr@gmail.com>
+
+pkgname=salientos-calamares-xfce-config
+_destname1="/etc"
+pkgver=v$(date +%y.%m)
+pkgrel=1
+pkgdesc="Salient OS XFCE - Calamares Config"
+arch=('any')
+url="https://github.com/salientos"
+license=('GPL3')
+makedepends=('git')
+depends=()
+conflicts=('calamares-kde-config')
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+source=(${pkgname}::"git+${url}/${pkgname}")
+sha256sums=('SKIP')
+package() {
+	install -dm755 ${pkgdir}${_destname1}
+	cp -r ${srcdir}/${pkgname}${_destname1}/* ${pkgdir}${_destname1}
+}

@@ -1,0 +1,10 @@
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Type = Package
+Target = salientos-hooks
+
+[Action]
+Description = Updating Salient OS specific configuration.
+When = PostTransaction
+Exec = /usr/bin/salientos-hooks-runner

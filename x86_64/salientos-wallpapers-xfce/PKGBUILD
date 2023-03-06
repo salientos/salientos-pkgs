@@ -1,0 +1,23 @@
+#Maintainer: silent robot (d3signr@gmail.com)
+
+pkgname=salientos-wallpapers-xfce
+_pkgname=salientos-wallpapers-xfce
+_destname1="/usr/share/backgrounds/salientos/"
+pkgver="$(date +%Y.%m)"
+pkgrel=2
+pkgdesc="Wallpapers for Salient OS"
+arch=('any')
+url="https://github.com/salientos/"
+license=('GPL3')
+makedepends=('git')
+depends=()
+conflicts=('salientos-wallpapers-kde')
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+source=(${_pkgname}::"git+https://github.com/salientos/${_pkgname}.git")
+sha256sums=('SKIP')
+
+package() {
+	install -dm755 ${pkgdir}${_destname1}
+	cp -r --no-preserve=ownership ${srcdir}/${_pkgname}${_destname1}* ${pkgdir}${_destname1}
+}

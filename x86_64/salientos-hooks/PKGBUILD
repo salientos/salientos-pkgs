@@ -1,0 +1,51 @@
+# Maintainer: Salient OS <d3signr@gmail.com>
+
+pkgname=salientos-hooks
+pkgver="$(date +%Y.%m)"
+pkgrel=1
+pkgdesc='Salient OS Pacman Hooks'
+arch=('any')
+license=('GPL3')
+url=https://github.com/salientos/$pkgname/main
+_url=https://raw.githubusercontent.com/salientos/$pkgname/main
+
+source=(
+  $_url/salientos-os-release.hook
+  $_url/salientos-lsb-release.hook
+  $_url/${pkgname}.hook
+  $_url/${pkgname}-misc
+  $_url/${pkgname}-runner
+  $_url/${pkgname}-grub.hook
+  $_url/${pkgname}-pixmaps.hook
+  $_url/salientos-reboot-required
+  $_url/salientos-check-reboot-required
+  $_url/salientos-reboot-required.hook
+)
+
+sha512sums=('5e2cd1937f9597ce266a07c07899a351abb7b62ea3699829764f79dfdfd4f2a3b56295701f83826a6a5e5196708a4e78d4d93a93faef15540ffe1412c5e24d99'
+            '9e0e73841c782569248e762216c80369e79e6c0ce277b910e65b85a5979c7dfc99cac7b1bb1f08dbb5f70904783a4255aa0f630c44b341ce91746e4c72ecc33a'
+            '6247d36166dbed3bfa56f5e73707fc37c8c03a9ae05963fb7a80da4e6f0e22dd0f731538963cf0f29eed10ad5471a1b888a0a20d9cb7f0daafeb16fe6701afe2'
+            'abf7aa4a2374fcb3b4f66c7056a3cdf022e5b5ea0626251d1962482436606da53f4607184be42e8f4543809cec7627fe090a2d9bf9e5416b6d68d82eb538aa09'
+            '948baacb3244c995a84c68f87a18dcbbd4b3a5c8f1a97b85e68f2121e4a9acfad84e9dc2af734a28f766ef5a8b7e33177e3115f25a321163ac1f4319975f7574'
+            'ec683cbb03248830259cd933348855ec45d3128a0a40e6881068f1a94f66252ba7b77f147100fc3c42b4b50fa36e141e6fcc1e9d207e6ae9e3d470d5f10f4a30'
+            '9167f30a00a02606fad7b88288e202c06673f7ff1c73545bc8236013de4b85c3b4de3b77501bced0eff0a9d502e383adc5b9ee01dafd4b22674d4a1b3a859e6d'
+            '5085ce6507f7e2fbb645319d69e8ecda6ada8fc10df4d063a5c626787730271a6d8bd235896f6fea349ff702ed0207caa2f89c33492ceb2d963d0bfee9e4fdfc'
+            '12bcc66aef34a25dcc17bb38c8da371152dba6213b3f946809b9736cbfd804e6360acb6866a2daa9d370d34fa38a56540b98e9c2e10cf4499d6d83aee03e9ba2'
+            'ea40bd92e47d2287b507f07daf42961cd70b9f67bb5b5639f5418a61c2d20c6e7e2857bfd6be2f3bfc657ecff1d48f2854cc73c333f44c30b3168965453f727d')
+
+package() {
+  local hooks=${pkgdir}/usr/share/libalpm/hooks
+  local bin=${pkgdir}/usr/bin
+  
+  install -Dm644 salientos-lsb-release.hook       $hooks/lsb-release.hook
+  install -Dm644 salientos-os-release.hook        $hooks/os-release.hook
+  install -Dm644 ${pkgname}.hook                  $hooks/${pkgname}.hook
+  install -Dm644 ${pkgname}-grub.hook             $hooks/${pkgname}-grub.hook
+  install -Dm644 ${pkgname}-pixmaps.hook          $hooks/${pkgname}-pixmaps.hook
+  install -Dm644 salientos-reboot-required.hook   $hooks/salientos-reboot-required.hook
+
+  install -Dm755 salientos-reboot-required        $bin/salientos-reboot-required
+  install -Dm755 salientos-check-reboot-required  $bin/salientos-check-reboot-required
+  install -Dm755 ${pkgname}-misc                  $bin/${pkgname}-misc
+  install -Dm755 ${pkgname}-runner                $bin/${pkgname}-runner
+}

@@ -1,0 +1,22 @@
+#Maintainer: silent robot (d3signr@gmail.com)
+
+pkgname=salientos-grub-theme
+thmname=salient
+destname='/usr/share/grub/themes/'
+pkgver="$(date +%Y.%m)"
+pkgrel=1
+pkgdesc='Salient OS - Grub Theme'
+arch=('any')
+url='https://github.com/salientos/'
+license=('GPL3')
+makedepends=('git')
+optdepends=('grub-customizer: GUI tool to configure GRUB')
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+source=(${pkgname}::"git+https://github.com/salientos/${pkgname}.git")
+sha256sums=('SKIP')
+
+package() {
+	install -dm755 ${pkgdir}${destname}
+	cp -r --no-preserve=ownership ${srcdir}/${pkgname}/${thmname}* ${pkgdir}${destname}
+}

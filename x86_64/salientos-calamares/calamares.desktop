@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Install SalientOS
+GenericName=SalientOS Installer
+Keywords=calamares;system;installer;
+Comment=Installer for SalientOS
+Exec=sh -c "/etc/calamares/launch.sh"
+Icon=calamares
+Terminal=false
+StartupNotify=true
+Categories=Qt;System;
